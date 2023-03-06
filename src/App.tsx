@@ -3,8 +3,6 @@ import axios from "axios";
 import { useState } from "react";
 import "./App.css";
 
-const API_KEY = "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";
-
 function App() {
   const [input, setInput] = useState("");
   const [completedSentence, setCompletedSentence] = useState("");
@@ -22,7 +20,7 @@ function App() {
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${API_KEY}`,
+          Authorization: `Bearer ${process.env.REACT_APP_VERY_PRIVATE_KEY}`,
         },
       }
     );
